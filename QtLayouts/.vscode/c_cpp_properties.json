@@ -4,19 +4,20 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/build",                
+                "/usr/include",
+                "${workspaceFolder}/build",
                 "${workspaceFolder}/build/MiracleLayout_autogen/include",
                 "/opt/Qt/5.12.1/gcc_64/include",
                 "/opt/Qt/5.12.1/gcc_64/include/QtCore",
                 "/opt/Qt/5.12.1/gcc_64/./mkspecs/linux-g++",
                 "/opt/Qt/5.12.1/gcc_64/include/QtWidgets",
                 "/opt/Qt/5.12.1/gcc_64/include/QtGui"
-            ],
-            "defines": [],
-            "compilerPath": "/usr/bin/clang",
-            "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            ],            
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
         },
         {
             "name": "Win",
@@ -39,7 +40,8 @@
             "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
             "cStandard": "c11",
             "intelliSenseMode": "msvc-x64",
-            "configurationProvider": "vector-of-bool.cmake-tools"
+            "configurationProvider": "vector-of-bool.cmake-tools",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
         }
     ],
     "version": 4

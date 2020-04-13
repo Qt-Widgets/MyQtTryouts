@@ -2,7 +2,7 @@
 #include "View/mainwindow.h"
 #include "Model/settings.h"
 #include "Model/provider.h"
-#include "ViewModel/MainViewManager.h"
+#include "ViewModel/mainviewmanager.h"
 #include "utils.h"
 #include <QFile>
 #include <QDir>
@@ -15,12 +15,12 @@ namespace Miracle
 {
     const QString dockRight("Right");
     const QString dockLeft("Left");
-    static auto STYLE_PREFIX = QStringLiteral(":/styles");
+    static auto STYLE_PREFIX = QStringLiteral(":/styles/");
 
     Startup::Startup() : 
         QObject(nullptr),                
         m_MainWindow( *new MainWindow(nullptr) ),
-        m_mainViewManager(new MainViewManager(this,Provider::GetSettingsAsSingleton()))
+        m_mainViewManager(new MainViewManager(this,Provider::GetSettingsAsSingleton(),m_MainWindow))
     {		
         
         
@@ -47,10 +47,14 @@ namespace Miracle
             }
             //dark orrange qss
             Settings& currentSetting = Provider::GetSettingsAsSingleton();
+
+            if(currentSetting.getCurrentStyle() == "default")
+                return;
+
             QString fileName("%1.qss");
             fileName = fileName.arg(currentSetting.getCurrentStyle());
             
-            QString path =res_dir.filePath(fileName);
+            QString path =res_dir.filePath(QString("%1/%2").arg(currentSetting.getCurrentStyle()).arg(fileName));
             
             QFile res_file(path);
             if(res_file.open(QFile::ReadOnly))

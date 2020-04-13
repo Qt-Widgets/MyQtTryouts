@@ -1,10 +1,24 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/favicon.ico</file>
-        <file>styles/darkorange.qss</file>
-        <file>styles/darkblue.qss</file>
+        <file>images/background.png</file>
         <file>images/en_US.png</file>
         <file>images/tr_TR.png</file>
+        <file>images/favicon.ico</file>
+        <file>images/undo_96px.png</file>
+        <file>images/redo_96px.png</file>
+        <file>images/reset.png</file>        
+        <file>images/new.png</file>
+        <file>images/open.png</file>
+        <file>images/save_96px.png</file>
+    </qresource>
+    <qresource prefix="/json">
+        <file>settings.json</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>styles/darkblue/darkblue.qss</file>
+        <file>styles/darkorange/darkorange.qss</file>
+    </qresource>
+    <qresource prefix="/">
         <file>images/dark/branch_closed.svg</file>
         <file>images/dark/branch_closed-on.svg</file>
         <file>images/dark/branch_open.svg</file>
@@ -46,11 +60,5 @@
         <file>images/dark/up_arrow-hover.svg</file>
         <file>images/dark/vmovetoolbar.svg</file>
         <file>images/dark/vsepartoolbars.svg</file>
-        <file>images/new.png</file>
-        <file>images/open.png</file>
-        <file>images/save.png</file>
-    </qresource>
-    <qresource prefix="/json">
-        <file>settings.json</file>
     </qresource>
 </RCC>
